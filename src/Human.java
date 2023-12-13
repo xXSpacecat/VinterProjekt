@@ -12,7 +12,7 @@ public class Human {
 
     }
 
-    public void pay(){
+    public void pay(int Hours, String job, int age){
 
     }
 }
