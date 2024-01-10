@@ -4,6 +4,11 @@ public class Civilian extends Human{
     int activeJob;
 
 
+    public void buyMembership() {
+
+        
+
+    }
 
 
 }
