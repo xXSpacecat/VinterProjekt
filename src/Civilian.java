@@ -3,6 +3,12 @@ public class Civilian extends Human{
     int debt;
     int activeJob;
 
+    public Civilian(String name, String password, int age, int bankNMR) {
+        this.name = name;
+        this.password = password;
+        this.age = age;
+        this.bankNMR = bankNMR;
+    }
 
     public void buyMembership() {
 

@@ -1,8 +1,9 @@
 public class Human {
     String name;
+    String password;
     int age;
     int bankNMR;
-    private int bankBalance;
+    private int bankBalance = 0;
     private boolean lendingPermission;
 
     public Human() {
@@ -13,7 +14,6 @@ public class Human {
         if (bankBalance >= amount) {
             bankBalance -= amount;
             this.lendingPermission = true;
-            System.out.println(name + " paid membership fee of $" + amount + ". Remaining balance: $" + bankBalance);
         } else {
             System.out.println(name + " does not have enough funds to pay the membership fee.");
         }

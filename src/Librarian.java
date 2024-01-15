@@ -2,8 +2,12 @@ public class Librarian extends Human{
 
     int workingHours;
 
-    public Librarian() {
+    public Librarian(String name, String password, int age, int bankNMR) {
         getPermission(0);
+        this.name = name;
+        this.password = password;
+        this.age = age;
+        this.bankNMR = bankNMR;
     }
 
     public void work(int hours){
