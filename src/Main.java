@@ -18,11 +18,12 @@ public class Main {
     static void printer(){
         System.out.println("1. Sign up");
         System.out.println("2. Log in");
+        System.out.println("3. Log in as Admin");
         String v = scan.nextLine();
         if (v.equalsIgnoreCase("1")){
             makeAciv();
         } else if (v.equalsIgnoreCase("2")) {
-
+            logIn();
         }else{
             System.out.println("I'm sorry, I did not quite get that, please try again");
             printer();
@@ -31,6 +32,7 @@ public class Main {
     }
 
     static void makeAciv(){
+        //skapar en civil
         System.out.println("Sign up\n---------");
         System.out.print("Name: ");
         String name = scan.next();
@@ -40,9 +42,39 @@ public class Main {
         int age = scan.nextInt();
         System.out.print("bankNMR: ");
         int bankNMR = scan.nextInt();
+        scan.nextLine();
 
         civies.add(new Civilian(name, password, age, bankNMR));
-        System.out.println("Account created!\nWelcome!");
+
+    }
+
+    static void logIn(){
+        //loggar in i en människa
+        System.out.print("Name: ");
+        String logInName = scan.next();
+        System.out.print("Password: ");
+        String logInPass = scan.next();
+        scan.nextLine();
+
+        int i = 0;
+        for (;i < civies.size(); i++) {
+
+            if (civies.get(i).name.equals(logInName)) {
+                if (civies.get(i).password.equals(logInPass)) {
+                    System.out.println("You're in!");
+                    new LibrarySystem();
+                    break;
+                } else {
+                    System.out.println("wrong password");
+                }
+
+            }
+            if (civies.size() == i+1) {
+                System.out.println("No user with name");
+            }
+        }
+
+
 
     }
 }
