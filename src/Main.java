@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class Main {
     static Scanner scan = new Scanner(System.in);
     static ArrayList<Civilian> civies = new ArrayList<>();
+    static LibrarySystem system = new LibrarySystem();
     public static void main(String[] args) {
+
 
         Librarian Lib1 = new Librarian("Vivian", "vivian1", 65, 1111);
         while(true) {
@@ -62,14 +64,13 @@ public class Main {
             if (civies.get(i).name.equals(logInName)) {
                 if (civies.get(i).password.equals(logInPass)) {
                     System.out.println("You're in!");
-                    new LibrarySystem();
+                    system.printer();
                     break;
                 } else {
                     System.out.println("wrong password");
                 }
 
-            }
-            if (civies.size() == i+1) {
+            } else if (civies.size() == i+1) {
                 System.out.println("No user with name");
             }
         }

@@ -4,9 +4,11 @@ public class Book {
     int currentPage = 0;
     double bookState = 1.0;
     int lendingPeriod = 30;
+    String author;
 
-    public Book(String title, int pages) {
+    public Book(String title, String author, int pages) {
         this.title = title;
+        this.author = author;
         this.pages = pages;
     }
 
