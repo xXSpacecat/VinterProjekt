@@ -68,16 +68,50 @@ public class LibrarySystem {
     private void viewBooks() {
         for(int i = 0; i<genre.length; i++){
             for (int j = 0; j< genre[i].size(); j++){
-                System.out.println(genre[i].get.name);
+                Book currentbook = (Book)genre[i].get(j);
+                System.out.println(currentbook.getTitle());
             }
         }
     }
 
     private void removeBook() {
+        System.out.print("Enter the title of the book to remove: ");
+        String rTitle = Main.scan.nextLine();
+
+        for (int i = 0; i < genre.length; i++) {
+            ArrayList<Book> booksInGenre = genre[i];
+            for (int j = 0; j < booksInGenre.size(); j++) {
+                Book book = booksInGenre.get(j);
+                if (book.getTitle().equalsIgnoreCase(rTitle)) {
+                    booksInGenre.remove(j);
+                    System.out.println("Book removed successfully!");
+                    return;
+                }
+            }
+        }
+
+        System.out.println("Book not found. Please check the title and try again.");
 
     }
 
     private void addBook() {
+        System.out.println("Enter book details:");
+        System.out.print("Title: ");
+        String title = Main.scan.nextLine();
+        System.out.print("Author: ");
+        String author = Main.scan.nextLine();
+        System.out.print("Pages: ");
+        int pages = Integer.parseInt(Main.scan.nextLine());
+
+        System.out.println("Select genre: ");
+        System.out.println("1. Horror");
+        System.out.println("2. Romance");
+        System.out.println("3. Sci-Fi");
+        System.out.println("4. Philosophy");
+        int genreNmr = Integer.parseInt(Main.scan.nextLine()) - 1;
+
+        genre[genreNmr].add(new Book(title, author, pages));
+        System.out.println("Book added successfully!");
 
     }
 
