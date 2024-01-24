@@ -5,11 +5,12 @@ import java.util.Scanner;
 public class Main {
     static Scanner scan = new Scanner(System.in);
     static ArrayList<Civilian> civies = new ArrayList<>();
+    static ArrayList<Librarian> librarians= new ArrayList<>();
     static LibrarySystem system = new LibrarySystem();
     public static void main(String[] args) {
 
 
-        Librarian Lib1 = new Librarian("Vivian", "vivian1", 65, 1111);
+        librarians.add(new Librarian("Vivian", "vivian1", 65, 1111));
         while(true) {
             printer();
         }
@@ -26,11 +27,40 @@ public class Main {
             makeAciv();
         } else if (v.equalsIgnoreCase("2")) {
             logIn();
+
+        } else if (v.equalsIgnoreCase("3")) {
+            adminLogIn();
         }else{
             System.out.println("I'm sorry, I did not quite get that, please try again");
             printer();
         }
 
+    }
+
+    private static void adminLogIn() {
+
+        //loggar in i en Admin
+        System.out.print("Name: ");
+        String logInName = scan.next();
+        System.out.print("Password: ");
+        String logInPass = scan.next();
+        scan.nextLine();
+
+        int i = 0;
+        for (;i < librarians.size(); i++) {
+            if (librarians.get(i).name.equals(logInName)) {
+                if (librarians.get(i).password.equals(logInPass)) {
+                    System.out.println("You're in!");
+                    system.adminPrinter();
+                    break;
+                } else {
+                    System.out.println("wrong password");
+                }
+
+            } else if (civies.size() == i+1) {
+                System.out.println("No admin with name");
+            }
+        }
     }
 
     static void makeAciv(){
