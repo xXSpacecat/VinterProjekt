@@ -1,3 +1,4 @@
+//En gren av human som kommer kunna göraa ändringar i librarysystemet
 public class Librarian extends Human{
 
     int workingHours;

@@ -1,3 +1,4 @@
+//Böckerna kommer vara det inehållet i biblioteket och det som kommer flyttas runt
 public class Book {
     String title;
     int pages;

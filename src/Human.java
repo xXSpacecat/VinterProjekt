@@ -1,3 +1,5 @@
+//Basklassen för alla klasser som kommer ha en roll i programmet
+
 public class Human {
     String name;
     String password;
@@ -10,7 +12,7 @@ public class Human {
     }
 
     public void getPermission(double amount){
-
+//För att se vem som har rätt till att låna eller inte, librarians har den automatisk och utan kostnad
         if (bankBalance >= amount) {
             bankBalance -= amount;
             this.lendingPermission = true;

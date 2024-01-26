@@ -19,6 +19,7 @@ public class Main {
     }
 
     static void printer(){
+        //Skriver ut startskärmen för att påbörja interaktion
         System.out.println("1. Sign up");
         System.out.println("2. Log in");
         System.out.println("3. Log in as Admin");

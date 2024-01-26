@@ -1,3 +1,4 @@
+//Självaste systemet där allting ska ske
 import java.util.ArrayList;
 
 public class LibrarySystem {
@@ -7,9 +8,11 @@ public class LibrarySystem {
     static ArrayList<Book> sciFi = new ArrayList<>();
     static ArrayList<Book> philosophy = new ArrayList<>();
 
+    //alla böcker kommer samlas i en och samma array
     ArrayList[] genre = {horror, romance, sciFi, philosophy};
 
     public LibrarySystem() {
+        //Ett antal böcker skapas i förhand
         horror.add(new Book("Murder on Rue Morgue", "Poe, Edgar Allan", 112));
         horror.add(new Book("The Back Rooms", "", 0));
         horror.add(new Book("Cujo","King, Stephen" ,453));
@@ -24,6 +27,7 @@ public class LibrarySystem {
     }
 
     public void printer(){
+        //Kommer att skriva ut allt som behöver ske för en civilian som loggat in
         System.out.println("o7");
         while (true) {
             System.out.println("1. Lend Book");
@@ -45,6 +49,7 @@ public class LibrarySystem {
     }
 
     public void adminPrinter(){
+        //Här kommer alla val för admin skapas och kunna interageras med
         System.out.println("o7");
         while (true) {
             System.out.println("1. Add Book");
@@ -66,6 +71,7 @@ public class LibrarySystem {
     }
 
     private void viewBooks() {
+        //Loopar igenomalla böckerna i alla arrayer så att de ska kunna skrivas ut
         for(int i = 0; i<genre.length; i++){
             for (int j = 0; j< genre[i].size(); j++){
                 Book currentbook = (Book)genre[i].get(j);
@@ -75,6 +81,7 @@ public class LibrarySystem {
     }
 
     private void removeBook() {
+        //Tar bort valda böcker genom att jämföra titlar
         System.out.print("Enter the title of the book to remove: ");
         String rTitle = Main.scan.nextLine();
 
@@ -95,7 +102,8 @@ public class LibrarySystem {
     }
 
     private void addBook() {
-        System.out.println("Enter book details:");
+        //lägger till en bok genom att skapa en bok klass med alla parametrar som användaren kan stoppa in
+        System.out.println("Enter book details: ");
         System.out.print("Title: ");
         String title = Main.scan.nextLine();
         System.out.print("Author: ");
