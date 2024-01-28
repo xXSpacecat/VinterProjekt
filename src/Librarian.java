@@ -15,5 +15,27 @@ public class Librarian extends Human{
         pay(hours, "librarian", super.age);
     }
 
+    @Override
+    public void printer(){
+        //Här kommer alla val för admin skapas och kunna interageras med
+        System.out.println("o7");
+        while (true) {
+            System.out.println("1. Add Book");
+            System.out.println("2. Remove Book");
+            System.out.println("3. View available books");
+            String v = Main.scan.nextLine();
+            if (v.equalsIgnoreCase("1")){
+                Main.system.addBook();
+            } else if (v.equalsIgnoreCase("2")) {
+                Main.system.removeBook();
+            }else if (v.equalsIgnoreCase("3")) {
+                Main.system.viewBooks();
+            }else{
+                System.out.println("I'm sorry, I did not quite get that, please try again");
+                printer();
+            }
+        }
+
+    }
 
 }

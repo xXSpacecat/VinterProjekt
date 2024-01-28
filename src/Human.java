@@ -28,5 +28,28 @@ public class Human {
     public void payMembershipFee(double amount) {
 
     }
+    public void printer(){
+        //Kommer att skriva ut allt som behöver ske för en civilian som loggat in
+        System.out.println("o7");
+        while (true) {
+            System.out.println("1. Lend Book");
+            System.out.println("2. Return Book");
+            System.out.println("3. Become member");
+            System.out.println("4. View available books");
+            String v = Main.scan.nextLine();
+            if (v.equalsIgnoreCase("1")){
 
+            } else if (v.equalsIgnoreCase("2")) {
+
+            } else if (v.equalsIgnoreCase("3")) {
+
+            }else if (v.equalsIgnoreCase("4")) {
+                Main.system.viewBooks();
+            }else{
+                System.out.println("I'm sorry, I did not quite get that, please try again");
+                printer();
+            }
+        }
+
+    }
 }

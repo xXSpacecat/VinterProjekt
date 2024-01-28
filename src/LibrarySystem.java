@@ -26,51 +26,11 @@ public class LibrarySystem {
         philosophy.add(new Book("The art of war", "Tzu, Sun",54));
     }
 
-    public void printer(){
-        //Kommer att skriva ut allt som behöver ske för en civilian som loggat in
-        System.out.println("o7");
-        while (true) {
-            System.out.println("1. Lend Book");
-            System.out.println("2. Return Book");
-            System.out.println("3. View available books");
-            String v = Main.scan.nextLine();
-            if (v.equalsIgnoreCase("1")){
 
-            } else if (v.equalsIgnoreCase("2")) {
 
-            } else if (v.equalsIgnoreCase("3")) {
-                viewBooks();
-            }else{
-                System.out.println("I'm sorry, I did not quite get that, please try again");
-                printer();
-            }
-        }
 
-    }
 
-    public void adminPrinter(){
-        //Här kommer alla val för admin skapas och kunna interageras med
-        System.out.println("o7");
-        while (true) {
-            System.out.println("1. Add Book");
-            System.out.println("2. Remove Book");
-            System.out.println("3. View available books");
-            String v = Main.scan.nextLine();
-            if (v.equalsIgnoreCase("1")){
-                addBook();
-            } else if (v.equalsIgnoreCase("2")) {
-                removeBook();
-            }else if (v.equalsIgnoreCase("3")) {
-                viewBooks();
-            }else{
-                System.out.println("I'm sorry, I did not quite get that, please try again");
-                printer();
-            }
-        }
-
-    }
-
-    private void viewBooks() {
+    public void viewBooks() {
         //Loopar igenomalla böckerna i alla arrayer så att de ska kunna skrivas ut
         for(int i = 0; i<genre.length; i++){
             for (int j = 0; j< genre[i].size(); j++){
@@ -80,7 +40,7 @@ public class LibrarySystem {
         }
     }
 
-    private void removeBook() {
+    void removeBook() {
         //Tar bort valda böcker genom att jämföra titlar
         System.out.print("Enter the title of the book to remove: ");
         String rTitle = Main.scan.nextLine();
@@ -101,7 +61,7 @@ public class LibrarySystem {
 
     }
 
-    private void addBook() {
+    void addBook() {
         //lägger till en bok genom att skapa en bok klass med alla parametrar som användaren kan stoppa in
         System.out.println("Enter book details: ");
         System.out.print("Title: ");

@@ -1,16 +1,15 @@
-import javax.xml.namespace.QName;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     static Scanner scan = new Scanner(System.in);
-    static ArrayList<Civilian> civies = new ArrayList<>();
-    static ArrayList<Librarian> librarians= new ArrayList<>();
+    static ArrayList<Human> people = new ArrayList<>();
     static LibrarySystem system = new LibrarySystem();
+
     public static void main(String[] args) {
 
 
-        librarians.add(new Librarian("Vivian", "vivian1", 65, 1111));
+        people.add(new Librarian("Vivian", "vivian1", 65, 1111));
         while(true) {
             printer();
         }
@@ -22,15 +21,11 @@ public class Main {
         //Skriver ut startskärmen för att påbörja interaktion
         System.out.println("1. Sign up");
         System.out.println("2. Log in");
-        System.out.println("3. Log in as Admin");
         String v = scan.nextLine();
         if (v.equalsIgnoreCase("1")){
             makeAciv();
         } else if (v.equalsIgnoreCase("2")) {
             logIn();
-
-        } else if (v.equalsIgnoreCase("3")) {
-            adminLogIn();
         }else{
             System.out.println("I'm sorry, I did not quite get that, please try again");
             printer();
@@ -38,31 +33,7 @@ public class Main {
 
     }
 
-    private static void adminLogIn() {
 
-        //loggar in i en Admin
-        System.out.print("Name: ");
-        String logInName = scan.next();
-        System.out.print("Password: ");
-        String logInPass = scan.next();
-        scan.nextLine();
-
-        int i = 0;
-        for (;i < librarians.size(); i++) {
-            if (librarians.get(i).name.equals(logInName)) {
-                if (librarians.get(i).password.equals(logInPass)) {
-                    System.out.println("You're in!");
-                    system.adminPrinter();
-                    break;
-                } else {
-                    System.out.println("wrong password");
-                }
-
-            } else if (civies.size() == i+1) {
-                System.out.println("No admin with name");
-            }
-        }
-    }
 
     static void makeAciv(){
         //skapar en civil
@@ -77,7 +48,7 @@ public class Main {
         int bankNMR = scan.nextInt();
         scan.nextLine();
 
-        civies.add(new Civilian(name, password, age, bankNMR));
+        people.add(new Civilian(name, password, age, bankNMR));
 
     }
 
@@ -90,18 +61,18 @@ public class Main {
         scan.nextLine();
 
         int i = 0;
-        for (;i < civies.size(); i++) {
+        for (;i < people.size(); i++) {
 
-            if (civies.get(i).name.equals(logInName)) {
-                if (civies.get(i).password.equals(logInPass)) {
+            if (people.get(i).name.equals(logInName)) {
+                if (people.get(i).password.equals(logInPass)) {
                     System.out.println("You're in!");
-                    system.printer();
+                    people.get(i).printer();
                     break;
                 } else {
                     System.out.println("wrong password");
                 }
 
-            } else if (civies.size() == i+1) {
+            } else if (people.size() == i+1) {
                 System.out.println("No user with name");
             }
         }
