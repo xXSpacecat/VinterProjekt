@@ -5,7 +5,7 @@ public class Human {
     String password;
     int age;
     int bankNMR;
-    private int bankBalance = 0;
+    private int bankBalance = 30;
     private boolean lendingPermission;
 
     public Human() {
@@ -21,11 +21,11 @@ public class Human {
         }
     }
 
-    public void pay(int Hours, String job, int age){
+    private void pay(int Hours, String job, int age){
 
     }
 
-    public void payMembershipFee(double amount) {
+    private void payMembershipFee(double amount) {
 
     }
     public void printer(){
@@ -38,11 +38,18 @@ public class Human {
             System.out.println("4. View available books");
             String v = Main.scan.nextLine();
             if (v.equalsIgnoreCase("1")){
-
+                Main.system.lendBook(lendingPermission);
             } else if (v.equalsIgnoreCase("2")) {
-
+                Main.system.returnBook();
             } else if (v.equalsIgnoreCase("3")) {
-
+                int fee;
+                if (this.age < 25 || this.age >60){
+                    fee = 10;
+                }
+                else{
+                    fee = 10;
+                }
+                getPermission(fee);
             }else if (v.equalsIgnoreCase("4")) {
                 Main.system.viewBooks();
             }else{

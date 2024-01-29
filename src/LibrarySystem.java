@@ -33,6 +33,18 @@ public class LibrarySystem {
     public void viewBooks() {
         //Loopar igenomalla böckerna i alla arrayer så att de ska kunna skrivas ut
         for(int i = 0; i<genre.length; i++){
+                if (i == 0){
+                    System.out.println("Horror: ");
+                }
+            if (i == 1){
+                System.out.println("Romance: ");
+            }
+            if (i == 2){
+                System.out.println("Sci-Fi: ");
+            }
+            if (i == 3){
+                System.out.println("Philosophy: ");
+            }
             for (int j = 0; j< genre[i].size(); j++){
                 Book currentbook = (Book)genre[i].get(j);
                 System.out.println(currentbook.getTitle());
@@ -84,4 +96,12 @@ public class LibrarySystem {
     }
 
 
+    public void returnBook() {
+    }
+
+    public void lendBook(Boolean permission) {
+        if (!permission){
+            System.out.println("You have to become a member to lend books.");
+        }
+    }
 }
