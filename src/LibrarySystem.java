@@ -76,7 +76,7 @@ public class LibrarySystem {
         System.out.println("2. Romance");
         System.out.println("3. Sci-Fi");
         System.out.println("4. Philosophy");
-        int genreNmr = Integer.parseInt(Main.scan.nextLine()) - 1;
+        int genreNmr = Main.scan.nextInt();
 
         genre[genreNmr].add(new Book(title, author, pages));
         System.out.println("Book added successfully!");
