@@ -99,9 +99,26 @@ public class LibrarySystem {
     public void returnBook() {
     }
 
-    public void lendBook(Boolean permission) {
+    public Book lendBook(Boolean permission) {
         if (!permission){
             System.out.println("You have to become a member to lend books.");
+        }else {
+            System.out.print("Title of book you'd like to lend: ");
+            String title = Main.scan.next();
+            for (int i = 0; i < genre.length; i++){
+            for (int j = 0; j< genre[i].size(); j++){
+                Book currentbook = (Book)genre[i].get(j);
+                if (currentbook.title.equalsIgnoreCase(title)){
+                    genre[i].remove(currentbook);
+                    return currentbook;
+                }
+            }
+                System.out.println("No such book was found, try again.");
+            }
+
         }
+
+        return null;
+
     }
 }

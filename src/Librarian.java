@@ -12,7 +12,7 @@ public class Librarian extends Human{
     }
 
     public void work(int hours){
-        pay(hours, "librarian", super.age);
+        Librarian.pay(hours, "librarian", super.age);
     }
 
     @Override

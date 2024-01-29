@@ -1,5 +1,7 @@
 //Basklassen för alla klasser som kommer ha en roll i programmet
 
+import java.util.ArrayList;
+
 public class Human {
     String name;
     String password;
@@ -7,6 +9,8 @@ public class Human {
     int bankNMR;
     private int bankBalance = 30;
     private boolean lendingPermission;
+
+    private ArrayList <Book> pocket = new ArrayList<>();
 
     public Human() {
     }
@@ -21,7 +25,7 @@ public class Human {
         }
     }
 
-    private void pay(int Hours, String job, int age){
+    public static void pay(int Hours, String job, int age){
 
     }
 
@@ -38,7 +42,14 @@ public class Human {
             System.out.println("4. View available books");
             String v = Main.scan.nextLine();
             if (v.equalsIgnoreCase("1")){
-                Main.system.lendBook(lendingPermission);
+                Book borrowedBook = Main.system.lendBook(lendingPermission);
+
+                if (borrowedBook != null) {
+
+                    pocket.add(borrowedBook);
+
+                }
+
             } else if (v.equalsIgnoreCase("2")) {
                 Main.system.returnBook();
             } else if (v.equalsIgnoreCase("3")) {
@@ -58,5 +69,13 @@ public class Human {
             }
         }
 
+    }
+
+    public ArrayList<Book> getPocket() {
+        return pocket;
+    }
+
+    public void setPocket(ArrayList<Book> pocket) {
+        this.pocket = pocket;
     }
 }
