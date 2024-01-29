@@ -6,7 +6,7 @@ public class Human {
     String name;
     String password;
     int age;
-    int bankNMR;
+    private int bankNMR;
     private int bankBalance = 30;
     private boolean lendingPermission;
 
@@ -61,6 +61,9 @@ public class Human {
                     fee = 10;
                 }
                 getPermission(fee);
+                if (lendingPermission){
+                    System.out.println("You are now a member.");
+                }
             }else if (v.equalsIgnoreCase("4")) {
                 Main.system.viewBooks();
             }else{
@@ -71,5 +74,12 @@ public class Human {
 
     }
 
+    public boolean isLendingPermission() {
+        return lendingPermission;
+    }
 
+    public int setBankNMR(int bankNMR) {
+        this.bankNMR = bankNMR;
+        return bankNMR;
+    }
 }

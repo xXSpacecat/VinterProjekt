@@ -22,13 +22,16 @@ public class Librarian extends Human{
         while (true) {
             System.out.println("1. Add Book");
             System.out.println("2. Remove Book");
-            System.out.println("3. View available books");
+            System.out.println("3. Pick up Book");
+            System.out.println("4. View available books");
             String v = Main.scan.nextLine();
             if (v.equalsIgnoreCase("1")){
                 Main.system.addBook();
             } else if (v.equalsIgnoreCase("2")) {
                 Main.system.removeBook();
             }else if (v.equalsIgnoreCase("3")) {
+                Main.system.lendBook(this.isLendingPermission());
+            }else if (v.equalsIgnoreCase("4")) {
                 Main.system.viewBooks();
             }else{
                 System.out.println("I'm sorry, I did not quite get that, please try again");

@@ -100,6 +100,7 @@ public class LibrarySystem {
     }
 
     public Book lendBook(Boolean permission) {
+        //Den kommer kolla om man har behörighet för att låna böcker och sedan hitta boken som vill lånas vilket sen storas i människan
         if (!permission){
             System.out.println("You have to become a member to lend books.");
         }else {

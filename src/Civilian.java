@@ -7,7 +7,7 @@ public class Civilian extends Human{
         //konstruktorn kommer säga till att bara en viss ålder av civilians kan skapas
         this.name = name;
         this.password = password;
-        this.bankNMR = bankNMR;
+        this.setBankNMR(bankNMR);
         if (age < 16){
             System.out.println("You have to be at least 16 years old to create an account.");
         }else{
