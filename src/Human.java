@@ -45,7 +45,7 @@ public class Human {
                 Book borrowedBook = Main.system.lendBook(lendingPermission);
 
                 if (borrowedBook != null) {
-
+                    System.out.println("You are now in possession of "+ borrowedBook.title + ", Please return in "+ borrowedBook.lendingPeriod + "days.");
                     pocket.add(borrowedBook);
 
                 }
@@ -71,11 +71,5 @@ public class Human {
 
     }
 
-    public ArrayList<Book> getPocket() {
-        return pocket;
-    }
 
-    public void setPocket(ArrayList<Book> pocket) {
-        this.pocket = pocket;
-    }
 }

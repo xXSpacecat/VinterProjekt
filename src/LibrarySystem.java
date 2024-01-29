@@ -104,7 +104,7 @@ public class LibrarySystem {
             System.out.println("You have to become a member to lend books.");
         }else {
             System.out.print("Title of book you'd like to lend: ");
-            String title = Main.scan.next();
+            String title = Main.scan.nextLine();
             for (int i = 0; i < genre.length; i++){
             for (int j = 0; j< genre[i].size(); j++){
                 Book currentbook = (Book)genre[i].get(j);
@@ -113,11 +113,11 @@ public class LibrarySystem {
                     return currentbook;
                 }
             }
-                System.out.println("No such book was found, try again.");
+
             }
 
         }
-
+        System.out.println("No such book was found, try again.");
         return null;
 
     }
