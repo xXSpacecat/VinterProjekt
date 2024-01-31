@@ -8,7 +8,7 @@ public class Librarian extends Human{
         this.name = name;
         this.password = password;
         this.age = age;
-        this.bankNMR = bankNMR;
+        this.setBankNMR(bankNMR);
     }
 
     public void work(int hours){

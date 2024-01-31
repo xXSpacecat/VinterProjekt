@@ -78,8 +78,7 @@ public class Human {
         return lendingPermission;
     }
 
-    public int setBankNMR(int bankNMR) {
+    public void setBankNMR(int bankNMR) {
         this.bankNMR = bankNMR;
-        return bankNMR;
     }
 }
