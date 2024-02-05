@@ -109,7 +109,7 @@ public class LibrarySystem {
             for (int i = 0; i < genre.length; i++){
             for (int j = 0; j< genre[i].size(); j++){
                 Book currentbook = (Book)genre[i].get(j);
-                if (currentbook.title.equalsIgnoreCase(title)){
+                if (currentbook.getTitle().equalsIgnoreCase(title)){
                     genre[i].remove(currentbook);
                     return currentbook;
                 }

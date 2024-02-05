@@ -1,11 +1,11 @@
 //Böckerna kommer vara det inehållet i biblioteket och det som kommer flyttas runt
 public class Book {
-    String title;
-    int pages;
-    int currentPage = 0;
-    double bookState = 1.0;
-    int lendingPeriod = 30;
-    String author;
+    private String title;
+    private int pages;
+    private int currentPage = 0;
+    private double bookState = 1.0;
+    public int lendingPeriod = 30;
+    private String author;
 
     public Book(String title, String author, int pages) {
         this.title = title;

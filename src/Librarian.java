@@ -1,7 +1,7 @@
-//En gren av human som kommer kunna göraa ändringar i librarysystemet
+//En gren av human som kommer kunna göra ändringar i librarysystemet
 public class Librarian extends Human{
 
-    int workingHours;
+    private int workingHours;
 
     public Librarian(String name, String password, int age, int bankNMR) {
         getPermission(0);

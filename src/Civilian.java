@@ -1,7 +1,7 @@
 //Civiian ska vara klassen som kan låna och lämna tillbaka böcker
 
 public class Civilian extends Human{
-    int debt;
+    private int debt;
 
     public Civilian(String name, String password, int age, int bankNMR) {
         //konstruktorn kommer säga till att bara en viss ålder av civilians kan skapas
@@ -15,12 +15,6 @@ public class Civilian extends Human{
             System.out.println("Account created!\nWelcome!");
 
         }
-    }
-
-    public void buyMembership() {
-
-        
-
     }
 
 
